@@ -160,8 +160,7 @@
         const GAS_URL = "https://script.google.com/macros/s/AKfycby4eY6zCdRRE_3x4su1_6uIg3PQ6DXU5sd4x6sW6WiakmbzU-8DtP3w6GG99ubETJMj/exec";
         const KAKAO_CLIENT_ID = "4800b51cb8a7d1862dc4b2725633ea69";
         const VAPI_KEY = "6aeb4233-7c3c-48f6-90fe-ee5d7a40d2a3";
-        // TODO: Replace this placeholder with Claire's actual Vapi ID once created
-        const VAPI_ASSISTANT_ID = "INSERT_CLAIRE_ID_HERE";
+        const VAPI_ASSISTANT_ID = "4234f198-6303-401c-9165-946f053e41f2";
 
         let callState = 'IDLE'; 
         let isUserAllowed = true; 
@@ -439,8 +438,8 @@
 
                 if (vapiInstance && typeof vapiInstance.start === 'function') {
                     const now = new Date();
-                    const guamTime = new Intl.DateTimeFormat('en-US', { 
-                        timeZone: 'Pacific/Guam', 
+                    const sydneyTime = new Intl.DateTimeFormat('en-US', { 
+                        timeZone: 'Australia/Sydney', 
                         hour: 'numeric', 
                         minute: '2-digit' 
                     }).format(now);
@@ -449,7 +448,7 @@
                         metadata: {
                             nickname: cachedKakaoNickname,
                             deviceHash: getDeviceHash(),
-                            liveGuamTime: guamTime
+                            liveSydneyTime: sydneyTime
                         }
                     });
                 }
